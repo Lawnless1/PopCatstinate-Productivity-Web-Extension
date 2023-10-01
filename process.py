@@ -1,5 +1,5 @@
 from knn import KNN
-import json
+import ujson as json
 from datapt import datapoint 
 
 def processBrowserHistory(f):

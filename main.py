@@ -10,9 +10,11 @@ def lol():
 
 
 @app.route("/process", methods = ["POST"])
-@cross_origin(supports_credentials=True)
+@cross_origin(origins="*")
 def processHistory():
-    return processBrowserHistory("{\"a\":1}")
+    content = processBrowserHistory(request.json)
+    app.logger.info(content)
+    return content
 
 
 if __name__ == "__main__":

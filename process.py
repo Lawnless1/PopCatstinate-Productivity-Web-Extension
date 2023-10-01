@@ -3,8 +3,8 @@ import ujson as json
 from datapt import datapoint 
 
 def processBrowserHistory(f):
+    app.logger.info("fsdfadsf")
     data = json.loads(f)
-    print("dsfyauiyfuisdfysudifyasdufu")
     print(data)
     return "{\"a\":1}"
     '''

@@ -1,5 +1,5 @@
 #imports
-from newfile import get_productivity_score
+from word2vec import get_productivity_score
 
 # open list of 1000 already scored websites
 from dictionary1000 import dict1
@@ -18,6 +18,3 @@ def productivity_constant(website, title):
     else:
         return round(get_productivity_score(website, title), 2)
 
-
-print(productivity_constant("https://www.google.com", "How to smoke"))
-print(productivity_constant("https://stackoverf1212.com", "I love coding"))

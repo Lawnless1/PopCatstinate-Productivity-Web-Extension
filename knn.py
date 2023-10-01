@@ -1,4 +1,3 @@
-
 import random 
 import numpy as np
 from sklearn.neighbors import NearestNeighbors
@@ -69,7 +68,7 @@ def KNN(Data: list, Initial_Vector: list, K: int):
     # Create the output data point
     output_point = {'x0': x0, 'y0': y0, 'prod_av': prod_av}
     
-    return output_point
+    return {"point": output_point, "neighbor":neighbors}
 
 
 '''=====================================================

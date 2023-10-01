@@ -1,6 +1,7 @@
 import time
 import datetime
 import knn
+from productivity_black_box import productivity_constant
 
 def dumb():
     pass
@@ -23,8 +24,7 @@ class datapoint(object):
     # Returns an a float between 0 and 1, where 1 is defined as productive according to url and title
     # Kenneth
     def productivity_calculation(self, url, title)-> float:
-        # word2vec
-        return 1
+        return round(productivity_constant(url, title), 2)
     
     def day_of_week_calculation(self,timestamp):
         timestamp = datetime.datetime.date(timestamp)

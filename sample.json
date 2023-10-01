@@ -1,0 +1,25 @@
+{
+    "websites": [ // list of all websites for reference
+      {
+        "url": "https://www.example.com",
+        "productivityScore": 0.3
+      }
+    ],
+    "weeks": [ // predicted week before 4 calculated weeks
+      {
+        "days": [ // in order please (days might be missing)
+          {
+            "averageProductivity": 0.4,
+            "hours": [ // in order please
+              {
+                "averageProductivity": 0.23,
+                "websites": [ // websites contributing to the prod. score
+                  "https://www.example.com"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

@@ -2,6 +2,7 @@ import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 from gensim.models import KeyedVectors
 
+print("* Loading the big ass fucking dataset...")
 filename = os.path.join(script_dir, 'GoogleNews-vectors-negative300.bin')
 model = KeyedVectors.load_word2vec_format(filename, binary=True)
         
@@ -35,9 +36,6 @@ def get_productivity_score(website, title):
 
 
     try:
-        
-
-
         for productivitycompare in list_of_productivity_words:
             try:
                 a = model.similarity(website, word)

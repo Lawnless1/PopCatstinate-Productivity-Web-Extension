@@ -13,8 +13,8 @@ def lol():
 @app.route("/process", methods = ["POST"])
 @cross_origin(origins="*")
 def processHistory():
+    app.logger.info(request.json)
     content = processBrowserHistory(request.json)
-    app.logger.info(content)
     return content
 
 

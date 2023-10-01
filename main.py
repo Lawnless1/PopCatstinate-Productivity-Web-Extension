@@ -9,7 +9,7 @@ def lol():
     return "rip bozo"
 
 
-@app.route("/process", methods = ["GET"])
+@app.route("/process", methods = ["POST"])
 @cross_origin(supports_credentials=True)
 def processHistory():
     return processBrowserHistory("{\"a\":1}")

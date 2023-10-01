@@ -1,6 +1,14 @@
 from knn import KNN
 import json
 from datapt import datapoint 
+import tldextract
+
+
+
+
+domain = tldextract.extract(url).domain.lower()
+
+
 
 def processBrowserHistory(f):
     data = f
@@ -32,9 +40,9 @@ def processBrowserHistory(f):
                 neighbors = k_neighbors["neighbor"]
                 vector = 0 if len(neighbors) == 0 else sum([float(i[2]) for i in neighbors])/len(neighbors)
                 ls2.append(vector)
-                urls = [timestamp_int_to_datapoint[neigh[1]].url for neigh in neighbors]
+                urls = [tldextract.extract(timestamp_int_to_datapoint[neigh[1]].url).domain.lower() for neigh in neighbors]
                 for url in urls:
-                    output["websites"].append(url)
+                    output["websites"].append(tldextract.extract(url).domain.lower())
                 hours.append({"averageProductivity": vector, "websites": urls})
             average_productivity = round(sum(ls2)/24, 2)
             days.append({"averageProductivity": average_productivity, "hours": hours})

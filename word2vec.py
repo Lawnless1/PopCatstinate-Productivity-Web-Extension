@@ -2,16 +2,10 @@ import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 from gensim.models import KeyedVectors
 
-
-isLoaded = False
-
-
+filename = os.path.join(script_dir, 'GoogleNews-vectors-negative300.bin')
+model = KeyedVectors.load_word2vec_format(filename, binary=True)
+        
 def get_productivity_score(website, title):
-    if (isLoaded == False):
-        filename = os.path.join(script_dir, 'GoogleNews-vectors-negative300.bin')
-        model = KeyedVectors.load_word2vec_format(filename, binary=True)
-        isLoaded = True
-                
     list_of_productivity_words = ["productive", "useful", "help", "productivity", "goal", "learn"]
 
     title = title.strip().split()

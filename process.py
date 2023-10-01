@@ -28,20 +28,15 @@ def processBrowserHistory(f):
                 k_neighbors = KNN(master_list, [day_of_week, 1693540801], 2)
                 vector = k_neighbors["point"]
                 neighbors = k_neighbors["neighbor"]
-                if type(vector) == dict:
-                    ls2.append(vector['prod_av'])
-                else:
-                    ls2.append(vector[2])
+                vector = 0 if len(neighbors) == 0 else sum([float(i[2]) for i in neighbors])/len(neighbors)
+                ls2.append(vector)
                 urls = [timestamp_int_to_datapoint[neigh[1]].url for neigh in neighbors]
                 for url in urls:
                     output["websites"].append(url)
-                if type(vector) == dict:
-                    hours.append({"averageProductivity": vector['prod_av'], "websites": urls})
-                else:
-                    hours.append({"averageProductivity": vector[2], "websites": urls})
-                
+                hours.append({"averageProductivity": vector, "websites": urls})
             average_productivity = round(sum(ls2)/24, 2)
             days.append({"averageProductivity": average_productivity, "hours": hours})
             output["weeks"].append({"days": days})
+    output["weeks"][::-1]
     y = json.dumps(output)
     return y

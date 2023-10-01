@@ -14,7 +14,7 @@ def lol():
 @cross_origin(origins="*", supports_credentials=True)
 def processHistory():
     app.logger.info(request.json)
-    content = processBrowserHistory(request.json)
+    content = processBrowserHistory(app.logger, request.json)
     return content
 
 

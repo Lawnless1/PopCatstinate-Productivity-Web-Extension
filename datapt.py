@@ -19,7 +19,7 @@ class datapoint(object):
     def time_calculation(self, timestamp) ->datetime.datetime:
         try:
             t = datetime.datetime.fromtimestamp(int(float(timestamp)))
-        except OSError:
+        except:
             t = datetime.datetime.fromtimestamp(int(float(timestamp/1000)))
         return t
 

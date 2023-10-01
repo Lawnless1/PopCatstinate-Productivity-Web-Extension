@@ -11,7 +11,7 @@ def lol():
 
 
 @app.route("/process", methods = ["POST"])
-@cross_origin(supports_credentials=True)
+@cross_origin(origins="*", supports_credentials=True)
 def processHistory():
     app.logger.info(request.json)
     content = processBrowserHistory(request.json)

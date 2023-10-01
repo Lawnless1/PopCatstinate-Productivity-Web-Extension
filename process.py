@@ -16,7 +16,9 @@ def processBrowserHistory(f):
         timestamp_int_to_datapoint[datapt.timestamp_int] = datapt
     extra_time = 0
     output = {"websites": [], "weeks":[]}
+    ib = 0
     for week in range(4):
+        ib += 1
         days = []
         extra_time += 604800
         for day_of_week in range(7):
@@ -25,7 +27,7 @@ def processBrowserHistory(f):
             extra_time += 86400
             for time in range(24):
                 extra_time += 3600
-                k_neighbors = KNN(master_list, [day_of_week, 1696173462], 2)
+                k_neighbors = KNN(master_list[0:ib*len(master_list//2)], [day_of_week, 1696173462], 2)
                 vector = k_neighbors["point"]
                 neighbors = k_neighbors["neighbor"]
                 vector = 0 if len(neighbors) == 0 else sum([float(i[2]) for i in neighbors])/len(neighbors)

@@ -16,11 +16,9 @@ class datapoint(object):
         self.toKNN = self.represent_for_Knn
         
     def time_calculation(self, timestamp) ->datetime.datetime:
-        try:
-            t = datetime.datetime.fromtimestamp(int(float(timestamp)))
-            return t
-        except OSError:
-            print(timestamp)
+        t = datetime.datetime.fromtimestamp(int(float(timestamp)))
+        return t
+
             
     # Returns an a float between 0 and 1, where 1 is defined as productive according to url and title
     # Kenneth

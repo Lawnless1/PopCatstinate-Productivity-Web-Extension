@@ -4,6 +4,7 @@ from datapt import datapoint
 
 def processBrowserHistory(f):
     data = json.loads(f)
+    print("dsfyauiyfuisdfysudifyasdufu")
     print(data)
     return "{\"a\":1}"
     '''

@@ -1,0 +1,21 @@
+{
+  "start": "2016-01-01T00:00:00.000Z",
+  "end": "2020-01-01T00:00:00.000Z",
+  "history": [
+    {
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "title": "Gaston Gagne - Rip Bozo",
+      "lastVisitTime": "1696131245"
+    },
+    {
+      "url": "https://discord.com/channels/@me/1031685006441054249",
+      "title": "Erhion - Discord",
+      "lastVisitTime": "1696131145"
+    },
+    {
+      "url": "https://www.the-west.net/",
+      "title": "The West - experience exciting adventures and duels",
+      "lastVisitTime": "1696130245"
+    }
+  ]
+}

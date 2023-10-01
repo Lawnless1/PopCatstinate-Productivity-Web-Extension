@@ -3,7 +3,7 @@ import ujson as json
 from datapt import datapoint 
 
 def processBrowserHistory(f):
-    data = json.loads(f)
+    data = f
     print(data)
     master_list = []
     for datapt in data["history"]:

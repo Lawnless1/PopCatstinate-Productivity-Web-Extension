@@ -3,8 +3,8 @@ from gensim.models import KeyedVectors
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 filename = os.path.join(script_dir, 'GoogleNews-vectors-negative300.bin')
+print(filename)
 model = KeyedVectors.load_word2vec_format(filename, binary=True)
-
 def get_productivity_score(website, title):
     list_of_productivity_words = ["productive", "useful", "help", "productivity", "goal", "learn"]
 

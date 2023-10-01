@@ -48,7 +48,7 @@ def KNN(Data: list, Initial_Vector: list, K: int):
     y_values = np.array(y_values).reshape(-1, 1)
 
     if K > len(y_values):
-        return {"point": [x0, y0, 0.5], "neighbor":[]}
+        return {"point": {'x0': x0, 'y0': y0, 'prod_av': 0.5}, "neighbor":[]}
       # raise ValueError("K is larger than the number of available y_values")
   
     # Create a NearestNeighbors model

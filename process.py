@@ -33,7 +33,7 @@ def processBrowserHistory(f):
                 neighbors = k_neighbors["neighbor"]
                 vector = 0 if len(neighbors) == 0 else sum([float(i[2]) for i in neighbors])/len(neighbors)
                 ls2.append(vector)
-                urls = [tldextract.extract(timestamp_int_to_datapoint[neigh[1]].url).domain.lower() for neigh in neighbors]
+                urls = list(set([tldextract.extract(timestamp_int_to_datapoint[neigh[1]].url).domain.lower() for neigh in neighbors]))
                 for url in urls:
                     output["websites"].append(tldextract.extract(url).domain.lower())
                 hours.append({"averageProductivity": vector, "websites": urls})

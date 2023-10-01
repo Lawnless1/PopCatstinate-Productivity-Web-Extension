@@ -39,7 +39,7 @@ def processBrowserHistory(f):
                 hours.append({"averageProductivity": vector, "websites": urls})
             average_productivity = round(sum(ls2)/24, 2)
             days.append({"averageProductivity": average_productivity, "hours": hours})
-        output["weeks"].append({"days": days})
+            output["weeks"].append({"days": days})
     output["weeks"][::-1]
     output["websites"] = list(set(output["websites"]))
     y = json.dumps(output)

@@ -3,13 +3,6 @@ import json
 from datapt import datapoint 
 import tldextract
 
-
-
-
-domain = tldextract.extract(url).domain.lower()
-
-
-
 def processBrowserHistory(f):
     data = f
     # with open('data2.json', 'r', encoding="utf8") as f:

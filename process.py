@@ -1,12 +1,14 @@
 from knn import KNN
-import ujson as json
+import json
 from datapt import datapoint 
+
 
 def processBrowserHistory(f):
     data = f
-    print(data)
+    # with open('data2.json', 'r', encoding="utf8") as f:
+        # data = json.load(f)
     master_list = []
-    for datapt in data["history"]:
+    for datapt in data:
         master_list.append(datapoint(datapt["url"], datapt["lastVisitTime"],datapt["title"]))
 
     timestamp_int_to_datapoint = {} # Dictionary mapping timestamp int to datapoint class
@@ -27,13 +29,23 @@ def processBrowserHistory(f):
                 k_neighbors = KNN(master_list, [day_of_week, 1693540801], 2)
                 vector = k_neighbors["point"]
                 neighbors = k_neighbors["neighbor"]
-                ls2.append(vector[2])
+                if type(vector) == dict:
+                    ls2.append(vector['prod_av'])
+                else:
+                    ls2.append(vector[2])
                 urls = [timestamp_int_to_datapoint[neigh[1]].url for neigh in neighbors]
                 for url in urls:
                     output["websites"].append(url)
-                hours.append({"averageProductivity": vector[2], "websites": urls})
+                if type(vector) == dict:
+                    hours.append({"averageProductivity": vector['prod_av'], "websites": urls})
+                else:
+                    hours.append({"averageProductivity": vector[2], "websites": urls})
+                
             average_productivity = round(sum(ls2)/24, 2)
             days.append({"averageProductivity": average_productivity, "hours": hours})
             output["weeks"].append({"days": days})
     y = json.dumps(output)
+    print(y)
     return y
+
+processBrowserHistory(1)

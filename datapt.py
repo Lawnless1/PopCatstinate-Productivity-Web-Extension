@@ -17,7 +17,10 @@ class datapoint(object):
         self.toKNN = self.represent_for_Knn()
         
     def time_calculation(self, timestamp) ->datetime.datetime:
-        t = datetime.datetime.fromtimestamp(int(float(timestamp)))
+        try:
+            t = datetime.datetime.fromtimestamp(int(float(timestamp)))
+        except OSError:
+            t = datetime.datetime.fromtimestamp(int(float(timestamp/1000)))
         return t
 
             

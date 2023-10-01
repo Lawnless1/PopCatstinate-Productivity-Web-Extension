@@ -53,7 +53,6 @@ def KNN(Data: list, Initial_Vector: list, K: int):
   
     # Create a NearestNeighbors model
     nn_model = NearestNeighbors(n_neighbors=K)
-    print(y_values)
     nn_model.fit(y_values)
     
     # Find the K nearest neighbors of y0
@@ -65,8 +64,10 @@ def KNN(Data: list, Initial_Vector: list, K: int):
     # print(neighbors)
   
     # Calculate the average 'z' value of the neighbors
-    prod_av = np.mean([point[2] for point in neighbors])
-    
+    try:
+        prod_av = np.mean([point[2] for point in neighbors])
+    except Exception:
+        prod_av = 0
     # Create the output data point
     output_point = {'x0': x0, 'y0': y0, 'prod_av': prod_av}
     

@@ -28,7 +28,7 @@ def processBrowserHistory(f):
             extra_time += 86400
             for time in range(24):
                 extra_time += 3600
-                k_neighbors = KNN(master_list[0:ib*(len(master_list)//2)], [day_of_week, 1696173462], 2)
+                k_neighbors = KNN(master_list, [day_of_week, 1696173462], 2)
                 vector = k_neighbors["point"]
                 neighbors = k_neighbors["neighbor"]
                 vector = 0 if len(neighbors) == 0 else sum([float(i[2]) for i in neighbors])/len(neighbors)

@@ -7,3 +7,6 @@ app = Flask(__name__)
 def processHistory():
     processBrowserHistory()
     return "TEST"
+
+if __name__ == "__main__":
+   app.run(debug=True, port=8080)

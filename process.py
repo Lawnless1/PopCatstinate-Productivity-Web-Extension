@@ -47,5 +47,3 @@ def processBrowserHistory(f):
     y = json.dumps(output)
     print(y)
     return y
-
-processBrowserHistory(1)

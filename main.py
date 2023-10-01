@@ -3,9 +3,14 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/process", methods = ["POST"])
+@app.route("/lol", methods = ["GET"])
+def lol():
+    return "rip bozo"
+
+
+@app.route("/process", methods = ["GET"])
 def processHistory():
-    return processBrowserHistory(request.form)
+    return processBrowserHistory("{\"a\":1}")
 
 
 if __name__ == "__main__":

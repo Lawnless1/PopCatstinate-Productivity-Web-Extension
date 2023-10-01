@@ -3,8 +3,10 @@ import json
 from datapt import datapoint 
 
 def processBrowserHistory(f):
-    data = json.load(f)
-
+    data = json.loads(f)
+    print(data)
+    return "{\"a\":1}"
+    '''
     master_list = []
     for datapt in data["history"]:
         master_list.append(datapoint(datapt["url"], datapt["lastVisitTime"],datapt["title"]))
@@ -38,3 +40,4 @@ def processBrowserHistory(f):
     y = json.dumps(output)
     return y
 
+'''

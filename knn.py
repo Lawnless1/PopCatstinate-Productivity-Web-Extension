@@ -60,8 +60,6 @@ def KNN(Data: list, Initial_Vector: list, K: int):
     
     # Extract the data points corresponding to the nearest neighbors
     neighbors = [same_day[i] for i in indices[0]]
-
-    # print(neighbors)
   
     # Calculate the average 'z' value of the neighbors
     try:

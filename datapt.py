@@ -40,13 +40,6 @@ class datapoint(object):
     def __repr__(self):
         return f"url:{self.url}\nint timestamp:{self.timestamp_int}\nTitle:{self.title}\nDay of Week:{self.day_of_week}\nProductivity:{self.productivity}"
 
-
-
-'''
-a = datapoint("abc/abs.com", "24234324234.082", "abs.com")
-print(a)
-'''
-    
         
     
     

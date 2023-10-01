@@ -1,7 +1,7 @@
 import os
 from gensim.models import KeyedVectors
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
+script_dir = os.path.dirname(__file__)
 filename = os.path.join(script_dir, 'GoogleNews-vectors-negative300.bin')
 print(filename)
 model = KeyedVectors.load_word2vec_format(filename, binary=True)

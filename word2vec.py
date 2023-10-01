@@ -1,7 +1,9 @@
 import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 from gensim.models import KeyedVectors
+global isLoaded
 isLoaded = False
+
 
 def get_productivity_score(website, title):
     if (isLoaded == False):

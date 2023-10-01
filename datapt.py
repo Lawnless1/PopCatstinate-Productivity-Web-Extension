@@ -14,7 +14,7 @@ class datapoint(object):
         self.title = title
         self.day_of_week = self.day_of_week_calculation(self.timestamp)
         self.productivity = self.productivity_calculation(self.url, self.title)
-        self.toKNN = self.represent_for_Knn
+        self.toKNN = self.represent_for_Knn()
         
     def time_calculation(self, timestamp) ->datetime.datetime:
         t = datetime.datetime.fromtimestamp(int(float(timestamp)))
@@ -24,7 +24,7 @@ class datapoint(object):
     # Returns an a float between 0 and 1, where 1 is defined as productive according to url and title
     # Kenneth
     def productivity_calculation(self, url, title)-> float:
-        return round(productivity_constant(url, title), 2)
+        return productivity_constant(url, title)
     
     def day_of_week_calculation(self,timestamp):
         timestamp = datetime.datetime.date(timestamp)

@@ -2,8 +2,7 @@ from knn import KNN
 import json
 from datapt import datapoint 
 
-def processBrowserHistory():
-    f = open('data.json')
+def processBrowserHistory(f):
     data = json.load(f)
 
     master_list = []
@@ -37,6 +36,5 @@ def processBrowserHistory():
             days.append({"averageProductivity": average_productivity, "hours": hours})
             output["weeks"].append({"days": days})
     y = json.dumps(output)
-    print(y)
+    return y
 
-processBrowserHistory()

@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Popcatstinate",
+    "description": "Your browser history reveals a lot about you.",
+    "version": "1.0",
+    "permissions": [
+        "history"
+    ],
+    "icons": {
+        "512": "assets/logo.png"
+    },
+    "action": {
+        "default_title": "My Productivity",
+        "default_popup": "popup/popup.html"
+    }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Demo Chart</title>
+    <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="../libs/loading-indicator.css" />
+</head>
+<body>
+    <span id="backButton" class="chart-arrow">&#9665;</span>
+
+    <img id="goodImage" src="../assets/good.png" />
+    <img id="badImage" src="../assets/bad.png" />
+    
+    <h1>...</h1>
+
+    <p id="summary">
+        Here are this week's statistics.
+    </p>
+
+    <section id="chart-wrapper">
+        <span id="previousWeek" class="chart-arrow">&#9664;</span>
+
+        <div id="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
+
+        <span id="nextWeek" class="chart-arrow">&#9654;</span>
+    </section>
+
+    <div id="overlay">
+        <section id="loading-indicator">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <p id="loadingtext">Loading analytics</p>
+        </section>
+    </div>
+
+    <div id="toast"></div>
+
+    <script src="../libs/chartjs.min.js"></script>
+    <script type="module" src="popup.js"></script>
+</body>
+</html>

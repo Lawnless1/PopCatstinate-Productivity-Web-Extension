@@ -1,0 +1,25 @@
+{
+  "websites": [
+    {
+      "url": "https://www.example.com",
+      "productivityScore": 0.3
+    }
+  ],
+  "weeks": [
+    {
+      "days": [
+        {
+          "averageProductivity": 0.4,
+          "hours": [
+            {
+              "averageProductivity": 0.23,
+              "websites": [
+                "https://www.example.com"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
